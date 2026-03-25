@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 09_inserts
+      author: jhon04suazasanchez@gmail.com
+      context: dev
+      labels: HU-02
+      comment: person inserts
+      changes:
+        - sqlFile:
+            path: 09_inserts/01-insert-person.sql
+            endDelimiter: \nGO
+            stripComments: false
+        - tagDatabase:
+            tag: v1.0.2
+      rollback:
+        - sqlFile:
+            path: 11_rollbacks/09_inserts/01-insert-person-rollback.sql
