@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01_tables
+      author: jhon04suazasanchez@gmail.com
+      context: dev
+      labels: HU-01
+      comment: person creation
+      changes:
+        - sqlFile:
+            path: 01_tables/01-create-person.sql
+            endDelimiter: \nGO
+            stripComments: false
+        - tagDatabase:
+            tag: v1.0.1
+      rollback:
+        - sqlFile:
+            path: 11_rollbacks/01_tables/01-create-person-rollback.sql
