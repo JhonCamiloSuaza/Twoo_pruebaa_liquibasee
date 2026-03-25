@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  liquibase:
+    image: liquibase/liquibase:latest
+    container_name: bd_liquibase_2
+    volumes:
+      - .:/liquibase/changelog
+      - ./postgresql-42.7.3.jar:/liquibase/lib/postgresql-42.7.3.jar
+    command: >
+      --url=jdbc:postgresql://host.docker.internal:5432/Twoo_pruebaa_liquibasee
+      --username=postgres
+      --password=camilo200804
+      --changeLogFile=01_tables/00-changelog.yaml
+      --searchPath=/liquibase/changelog
+      update
