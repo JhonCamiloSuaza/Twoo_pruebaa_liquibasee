@@ -10,6 +10,6 @@ services:
       --url=jdbc:postgresql://host.docker.internal:5432/Twoo_pruebaa_liquibasee
       --username=postgres
       --password=camilo200804
-      --changeLogFile=09_inserts/00-changelog.yaml
+      --changeLogFile=01_tables/00-changelog.yaml
       --searchPath=/liquibase/changelog
       update
